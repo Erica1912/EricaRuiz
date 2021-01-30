@@ -94,12 +94,11 @@ header span {
     height: 191px;
   }
   #menu-temas {
-    background-color: blueviolet;
+    background-color:green;
     color: white;
     display: inline-block;
-    vertical-align: middle;
-    margin: 1px;
+    vertical-align: middle;    
     font-size: initial;
-    font-weight: bolder;
+    margin: 2px;
   }
 }

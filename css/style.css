@@ -39,71 +39,67 @@ header span {
   justify-content: center;
   flex-direction: row;
   align-items: center;
-
- 
-  
 }
 .menu-principal .menu-temas {
-    margin: 15px;
-    height: 35px;
-    width: 150px;
-    background-color: springgreen;
-    border-radius: 25px;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: large;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+  margin: 15px;
+  height: 35px;
+  width: 150px;
+  background-color: blueviolet;
+  color: white;
+  border-radius: 25px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: large;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 
-    line-height: 32px;  
+  line-height: 32px;
 
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
 
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
-    -ms-border-radius: 25px;
-    -o-border-radius: 25px;
+.menu-temas:hover {
+  background-color:green;
+  color: white;
 
 }
 
- .menu-temas:hover{
-     background-color: tan;
- }
-
- @media only screen and (max-width: 600px) {
-  
-  #principal{
+@media only screen and (max-width: 600px) {
+  #principal {
     width: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  #imagen{ 
+  #imagen {
     text-align: center;
     height: 184px;
   }
-  
-  #menu-principal{
+
+  #menu-principal {
     width: 333px;
     align-items: center;
     text-align: center;
     display: flex;
-    flex-direction: row;    
+    flex-direction: row;
     vertical-align: middle;
-    line-height: 32px; 
+    line-height: 32px;
   }
-  #inicio{
+  #inicio {
     width: auto;
     margin: 11px;
     height: 191px;
   }
-  #menu-temas{    
+  #menu-temas {
     background-color: blueviolet;
+    color: white;
     display: inline-block;
     vertical-align: middle;
     margin: 1px;
     font-size: initial;
     font-weight: bolder;
-    color: white;
   }
-
 }

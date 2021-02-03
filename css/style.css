@@ -78,27 +78,19 @@ header span {
     text-align: center;
     height: 184px;
   }
-
-  #menu-principal {
-    width: 333px;
-    align-items: center;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    vertical-align: middle;
-    line-height: 32px;
-  }
   #inicio {
     width: auto;
     margin: 11px;
     height: 191px;
   }
+
+  #menu-principal {
+   
+  }
+
   #menu-temas {
-    background-color:green;
-    color: white;
-    display: inline-block;
-    vertical-align: middle;    
-    font-size: initial;
-    margin: 2px;
+    width: 130px;
+    margin: 1px;
+    background: green;
   }
 }

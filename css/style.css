@@ -62,35 +62,38 @@ header span {
 }
 
 .menu-temas:hover {
-  background-color:green;
+  background-color: green;
   color: white;
-
 }
 
-@media only screen and (max-width: 600px) {
-  #principal {
+@media screen and (max-width: 500px) {
+  header .principal {
     width: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  #imagen {
+  .imagen {
     text-align: center;
     height: 184px;
   }
-  #inicio {
+  header .inicio {
     width: auto;
     margin: 11px;
     height: 191px;
   }
 
-  #menu-principal {
-   
-  }
-
-  #menu-temas {
+  .menu-principal .menu-temas {
     width: 130px;
     margin: 1px;
-    background: green;
+    background:darkgoldenrod;
   }
+  header .inicio{
+    color: darkgoldenrod;
+  }
+  .menu-principal .menu-temas:hover{
+    color: white;
+    background: darkgoldenrod ;
+  }
+  
 }

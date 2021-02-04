@@ -41,9 +41,9 @@ header span {
   align-items: center;
 }
 .menu-principal .menu-temas {
-  margin: 15px;
+  margin: 2px;
   height: 35px;
-  width: 150px;
+  width: 200px;
   background-color: blueviolet;
   color: white;
   border-radius: 25px;
@@ -64,6 +64,36 @@ header span {
 .menu-temas:hover {
   background-color: green;
   color: white;
+}
+.princpal-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
+  border-radius: 18px;
+  -webkit-border-radius: 18px;
+  -moz-border-radius: 18px;
+  -ms-border-radius: 18px;
+  -o-border-radius: 18px;
+  text-align: center;
+}
+.princpal-card .card{
+  height: 350px;
+  width: 300px;
+  margin: 3px;
+  background-color: tomato;
+  border-radius: 23px;
+  box-shadow: 5px 5px 15px rgba(59, 31, 31, 0.9);
+}
+.card .card-image{
+  grid-area: image;
+}
+.card .card-text{
+  grid-area: text;
+}
+.card .card-stast{
+  grid-area: stast;
 }
 
 @media screen and (max-width: 500px) {

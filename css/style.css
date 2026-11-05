@@ -1,7 +1,7 @@
 
 /* =========================================
    ERICA RUIZ - CLOUD | DEVOPS | AI
-   Personal Portfolio - Version 003
+   Personal Portfolio - Version 004
 ========================================= */
 
 
@@ -44,7 +44,6 @@ html {
 
 body {
     min-height: 100vh;
-
     background:
         radial-gradient(
             circle at 80% 40%,
@@ -72,14 +71,16 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 25px;
 }
 
 .logo {
     color: var(--text);
     text-decoration: none;
     font-size: 22px;
-    font-weight: bold;
-    letter-spacing: 2px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
 }
 
 .logo span {
@@ -90,6 +91,7 @@ body {
     display: flex;
     align-items: center;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
 .navbar nav a {
@@ -131,9 +133,11 @@ body {
 .hero-image img {
     display: block;
     width: 100%;
+    max-width: 100%;
     height: auto;
-    aspect-ratio: 3 / 2;
 
+    /* Preserve original image proportions */
+    aspect-ratio: auto;
     object-fit: contain;
     object-position: center;
 
@@ -204,10 +208,8 @@ body {
     border: 1px solid rgba(155, 109, 255, 0.3);
     padding: 9px 15px;
     border-radius: 20px;
-
     color: var(--text);
     font-size: 12px;
-
     transition: all 0.3s ease;
 }
 
@@ -218,11 +220,12 @@ body {
 
 
 /* =========================================
-   6. HERO BUTTONS
+   6. BUTTONS
 ========================================= */
 
 .hero-buttons {
     display: flex;
+    flex-wrap: wrap;
     gap: 15px;
     margin-top: 35px;
 }
@@ -265,7 +268,6 @@ body {
 .projects {
     text-align: center;
     padding: 35px 20px;
-
     color: var(--secondary);
     font-size: 12px;
     letter-spacing: 2px;
@@ -315,7 +317,7 @@ body {
 
 .evolution-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 22px;
 }
 
@@ -379,7 +381,7 @@ body {
 
 
 /* =========================================
-   9. CONTACT SECTION - VERSION 003
+   9. CONTACT SECTION
 ========================================= */
 
 .contact {
@@ -422,24 +424,35 @@ body {
 
 @media (max-width: 900px) {
 
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
     .navbar nav {
+        justify-content: center;
         gap: 18px;
     }
 
     .hero {
-        gap: 30px;
-        padding-left: 25px;
-        padding-right: 25px;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 45px 25px;
     }
 
-    .hero-content h1 {
-        font-size: 42px;
+    .hero-image {
+        max-width: 650px;
+        margin: auto;
+    }
+
+    .hero-content {
+        max-width: 650px;
+        margin: auto;
     }
 
     .evolution-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
 }
 
 
@@ -452,6 +465,7 @@ body {
     .navbar {
         flex-direction: column;
         gap: 22px;
+        padding: 25px 15px;
     }
 
     .navbar nav {
@@ -464,21 +478,20 @@ body {
         display: flex;
         flex-direction: column;
         text-align: center;
-
-        padding-top: 35px;
+        padding: 35px 20px;
         gap: 35px;
     }
 
     .hero-image {
         width: 260px;
         max-width: 100%;
+        margin: auto;
     }
 
     .hero-image img {
         width: 100%;
         height: 260px;
         aspect-ratio: auto;
-
         object-fit: cover;
         object-position: center;
     }
@@ -519,7 +532,6 @@ body {
     .contact {
         padding: 60px 20px;
     }
-
 }
 
 
@@ -544,5 +556,4 @@ body {
     .hero-buttons {
         flex-direction: column;
     }
-
 }

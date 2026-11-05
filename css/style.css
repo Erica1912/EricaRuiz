@@ -1,129 +1,239 @@
-header {
-  padding: 0;
-  margin: 0;
-}
-header .principal {
-  margin-top: 50px;
-  height: auto;
-  width: auto;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-header .inicio {
-  margin: 15px;
-  height: 250px;
+
+/* 1. VARIABLES */
+
+:root {
+    --background: #080b18;
+    --surface: #11152a;
+    --primary: #9b6dff;
+    --secondary: #38bdf8;
+    --text: #ffffff;
+    --text-muted: #a7adc4;
 }
 
-header .imagenPrincipal {
-  height: 210px;
-  width: 210px;
-  border-radius: 100px;
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
-  -ms-border-radius: 100px;
-  -o-border-radius: 100px;
+/* 2. GLOBAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-header span {
-  font-family: "Courier New", Courier, monospace;
-}
-.menu-principal {
-  width: auto;
-  height: 60px;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  align-items: center;
-}
-.menu-principal .menu-temas {
-  margin: 2px;
-  height: 35px;
-  width: 200px;
-  background-color: blueviolet;
-  color: white;
-  border-radius: 25px;
-  font-family: "Courier New", Courier, monospace;
-  font-size: large;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-
-  line-height: 32px;
-
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  -ms-border-radius: 25px;
-  -o-border-radius: 25px;
+html {
+    scroll-behavior: smooth;
 }
 
-.menu-temas:hover {
-  background-color: green;
-  color: white;
-}
-.princpal-card {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: large;
-  border-radius: 18px;
-  -webkit-border-radius: 18px;
-  -moz-border-radius: 18px;
-  -ms-border-radius: 18px;
-  -o-border-radius: 18px;
-  text-align: center;
-}
-.princpal-card .card{
-  height: 350px;
-  width: 300px;
-  margin: 3px;
-  background-color: tomato;
-  border-radius: 23px;
-  box-shadow: 5px 5px 15px rgba(59, 31, 31, 0.9);
-}
-.card .card-image{
-  grid-area: image;
-}
-.card .card-text{
-  grid-area: text;
-}
-.card .card-stast{
-  grid-area: stast;
+body {
+    background:
+        radial-gradient(circle at 80% 40%, #25144b 0%, transparent 40%),
+        var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
 }
 
-@media screen and (max-width: 500px) {
-  header .principal {
-    width: auto;
+/* 3. NAVIGATION */
+
+.navbar {
+    max-width: 1150px;
+    margin: auto;
+    padding: 30px 25px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .imagen {
-    text-align: center;
-    height: 184px;
-  }
-  header .inicio {
-    width: auto;
-    margin: 11px;
-    height: 191px;
-  }
+    justify-content: space-between;
+    align-items: center;
+}
 
-  .menu-principal .menu-temas {
-    width: 130px;
-    margin: 1px;
-    background:darkgoldenrod;
-  }
-  header .inicio{
-    color: darkgoldenrod;
-  }
-  .menu-principal .menu-temas:hover{
+.logo {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.navbar nav {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+    color: var(--secondary);
+}
+
+/* 4. HERO */
+
+.hero {
+    max-width: 1100px;
+    min-height: 75vh;
+    margin: auto;
+    padding: 70px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 75px;
+}
+
+.hero-image img {
+    width: 300px;
+    height: 350px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 18px;
+    border: 1px solid rgba(155, 109, 255, 0.5);
+    box-shadow: 0 0 45px rgba(155, 109, 255, 0.2);
+}
+
+.hero-content {
+    max-width: 580px;
+}
+
+.eyebrow {
+    color: var(--secondary);
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.hero-content h1 {
+    font-size: clamp(38px, 5vw, 58px);
+    margin: 22px 0 10px;
+}
+
+.hero-content h1 span {
+    color: var(--primary);
+}
+
+.hero-content h2 {
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 22px;
+}
+
+.hero-content p {
+    color: var(--text-muted);
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 490px;
+}
+
+/* 5. TECHNOLOGY STACK */
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.tech-stack span {
+    background: var(--surface);
+    border: 1px solid rgba(155, 109, 255, 0.3);
+    padding: 9px 15px;
+    border-radius: 20px;
+    color: var(--text);
+    font-size: 12px;
+}
+
+/* 6. BUTTONS */
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.btn {
+    padding: 13px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: linear-gradient(100deg, var(--primary), #7044d8);
     color: white;
-    background: darkgoldenrod ;
-  }
-  
+}
+
+.btn-secondary {
+    border: 1px solid var(--primary);
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+/* 7. FOOTER / SIGNATURE */
+
+.projects {
+    text-align: center;
+    padding: 35px 20px;
+    color: var(--secondary);
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+/* 8. RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .navbar nav {
+        gap: 18px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 35px;
+        gap: 35px;
+    }
+
+    .hero-image img {
+        width: 230px;
+        height: 260px;
+    }
+
+    .hero-content p {
+        margin: auto;
+    }
+
+    .tech-stack,
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .eyebrow {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 380px) {
+    .navbar nav {
+        gap: 12px;
+    }
+
+    .navbar nav a {
+        font-size: 12px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
 }

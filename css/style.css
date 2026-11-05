@@ -1,5 +1,10 @@
 
-/* 1. VARIABLES */
+/* =========================================
+   ERICA RUIZ - CLOUD | DEVOPS | AI
+   Personal Portfolio - Version 001
+========================================= */
+
+/* 1. CSS VARIABLES */
 
 :root {
     --background: #080b18;
@@ -8,9 +13,17 @@
     --secondary: #38bdf8;
     --text: #ffffff;
     --text-muted: #a7adc4;
+
+    --gradient: linear-gradient(
+        100deg,
+        #9b6dff,
+        #7044d8
+    );
+
+    --shadow: 0 0 45px rgba(155, 109, 255, 0.20);
 }
 
-/* 2. GLOBAL */
+/* 2. GLOBAL RESET */
 
 * {
     margin: 0;
@@ -23,20 +36,28 @@ html {
 }
 
 body {
+    min-height: 100vh;
     background:
-        radial-gradient(circle at 80% 40%, #25144b 0%, transparent 40%),
+        radial-gradient(
+            circle at 80% 40%,
+            #25144b 0%,
+            transparent 40%
+        ),
         var(--background);
+
     color: var(--text);
     font-family: Arial, Helvetica, sans-serif;
-    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* 3. NAVIGATION */
 
 .navbar {
-    max-width: 1150px;
+    width: 100%;
+    max-width: 1200px;
     margin: auto;
     padding: 30px 25px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -45,7 +66,7 @@ body {
 .logo {
     color: var(--text);
     text-decoration: none;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
     letter-spacing: 2px;
 }
@@ -56,42 +77,57 @@ body {
 
 .navbar nav {
     display: flex;
-    gap: 30px;
+    align-items: center;
+    gap: 35px;
 }
 
 .navbar nav a {
     color: var(--text-muted);
     text-decoration: none;
     font-size: 14px;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 .navbar nav a:hover {
     color: var(--secondary);
 }
 
-/* 4. HERO */
+/* 4. HERO SECTION */
 
 .hero {
-    max-width: 1100px;
+    width: 100%;
+    max-width: 1150px;
     min-height: 75vh;
     margin: auto;
     padding: 70px 25px;
+
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 75px;
 }
 
+/* Profile image */
+
+.hero-image {
+    flex-shrink: 0;
+}
+
 .hero-image img {
+    display: block;
     width: 300px;
     height: 350px;
+
     object-fit: cover;
     object-position: center;
+
     border-radius: 18px;
     border: 1px solid rgba(155, 109, 255, 0.5);
-    box-shadow: 0 0 45px rgba(155, 109, 255, 0.2);
+
+    box-shadow: var(--shadow);
 }
+
+/* Hero content */
 
 .hero-content {
     max-width: 580px;
@@ -107,10 +143,19 @@ body {
 .hero-content h1 {
     font-size: clamp(38px, 5vw, 58px);
     margin: 22px 0 10px;
+    line-height: 1.15;
 }
 
 .hero-content h1 span {
-    color: var(--primary);
+    background: linear-gradient(
+        90deg,
+        #38bdf8,
+        #9b6dff
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero-content h2 {
@@ -137,14 +182,24 @@ body {
 
 .tech-stack span {
     background: var(--surface);
+
     border: 1px solid rgba(155, 109, 255, 0.3);
     padding: 9px 15px;
+
     border-radius: 20px;
+
     color: var(--text);
     font-size: 12px;
+
+    transition: all 0.3s ease;
 }
 
-/* 6. BUTTONS */
+.tech-stack span:hover {
+    border-color: var(--secondary);
+    transform: translateY(-3px);
+}
+
+/* 6. HERO BUTTONS */
 
 .hero-buttons {
     display: flex;
@@ -153,16 +208,22 @@ body {
 }
 
 .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
     padding: 13px 25px;
     border-radius: 8px;
+
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
-    transition: 0.3s;
+
+    transition: all 0.3s ease;
 }
 
 .btn-primary {
-    background: linear-gradient(100deg, var(--primary), #7044d8);
+    background: var(--gradient);
     color: white;
 }
 
@@ -173,19 +234,40 @@ body {
 
 .btn:hover {
     transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(155, 109, 255, 0.3);
 }
 
-/* 7. FOOTER / SIGNATURE */
+/* 7. PROJECTS SECTION */
 
 .projects {
     text-align: center;
     padding: 35px 20px;
+
     color: var(--secondary);
     font-size: 12px;
     letter-spacing: 2px;
 }
 
-/* 8. RESPONSIVE */
+/* 8. TABLET RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .hero {
+        gap: 40px;
+    }
+
+    .hero-image img {
+        width: 260px;
+        height: 310px;
+    }
+
+    .hero-content h1 {
+        font-size: 42px;
+    }
+
+}
+
+/* 9. MOBILE RESPONSIVE */
 
 @media (max-width: 768px) {
 
@@ -195,12 +277,13 @@ body {
     }
 
     .navbar nav {
-        gap: 18px;
+        gap: 20px;
     }
 
     .hero {
         flex-direction: column;
         text-align: center;
+
         padding-top: 35px;
         gap: 35px;
     }
@@ -208,6 +291,10 @@ body {
     .hero-image img {
         width: 230px;
         height: 260px;
+    }
+
+    .hero-content {
+        width: 100%;
     }
 
     .hero-content p {
@@ -222,9 +309,13 @@ body {
     .eyebrow {
         font-size: 9px;
     }
+
 }
 
+/* 10. SMALL MOBILE */
+
 @media (max-width: 380px) {
+
     .navbar nav {
         gap: 12px;
     }
@@ -233,7 +324,12 @@ body {
         font-size: 12px;
     }
 
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
     .hero-buttons {
         flex-direction: column;
     }
+
 }

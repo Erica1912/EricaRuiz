@@ -115,15 +115,14 @@ body {
 
 .hero-image img {
     display: block;
-    width: 300px;
-    height: 350px;
+    width: 360px;
+    height: 360px;
 
     object-fit: cover;
     object-position: center;
 
     border-radius: 18px;
     border: 1px solid rgba(155, 109, 255, 0.5);
-
     box-shadow: var(--shadow);
 }
 
@@ -248,7 +247,137 @@ body {
     letter-spacing: 2px;
 }
 
-/* 8. TABLET RESPONSIVE */
+
+/* =========================================
+   8. AI EVOLUTION SECTION - VERSION 002
+========================================= */
+
+.ai-evolution {
+    width: 100%;
+    max-width: 1150px;
+    margin: auto;
+    padding: 90px 25px;
+}
+
+.section-heading {
+    max-width: 720px;
+    margin-bottom: 45px;
+}
+
+.section-heading h2 {
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.2;
+    margin: 18px 0;
+}
+
+.section-heading h2 span {
+    background: linear-gradient(
+        90deg,
+        #38bdf8,
+        #9b6dff
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-heading p {
+    color: var(--text-muted);
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 650px;
+}
+
+.evolution-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.evolution-card {
+    background: linear-gradient(
+        145deg,
+        rgba(17, 21, 42, 0.95),
+        rgba(11, 15, 32, 0.95)
+    );
+
+    border: 1px solid rgba(155, 109, 255, 0.2);
+    border-radius: 14px;
+    padding: 30px 25px;
+
+    transition: transform 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.evolution-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--secondary);
+    box-shadow: var(--shadow);
+}
+
+.card-number {
+    color: var(--secondary);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.evolution-card h3 {
+    font-size: 19px;
+    margin: 25px 0 15px;
+}
+
+.evolution-card p {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.8;
+    min-height: 100px;
+}
+
+.card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 25px;
+}
+
+.card-tags span {
+    color: var(--secondary);
+    background: rgba(56, 189, 248, 0.07);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: 20px;
+    padding: 6px 10px;
+    font-size: 11px;
+}
+
+/* TABLET AND MOBILE */
+
+@media (max-width: 900px) {
+    .evolution-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .ai-evolution {
+        padding: 60px 20px;
+    }
+
+    .evolution-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .evolution-card p {
+        min-height: auto;
+    }
+
+    .section-heading {
+        text-align: center;
+    }
+}
+
 
 @media (max-width: 900px) {
 
@@ -257,8 +386,8 @@ body {
     }
 
     .hero-image img {
-        width: 260px;
-        height: 310px;
+        width: 300px;
+        height: 300px;
     }
 
     .hero-content h1 {
@@ -289,7 +418,7 @@ body {
     }
 
     .hero-image img {
-        width: 230px;
+        width: 260px;
         height: 260px;
     }
 
